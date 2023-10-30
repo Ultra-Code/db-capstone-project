@@ -13,16 +13,15 @@ SET @id = 1;
 EXECUTE GetOrderDetail USING @id;
 
 -- Task 3
-CREATE PROCEDURE CancelOrder(@OrderID INT)
+DELIMITER //
+CREATE PROCEDURE CancelOrder(IN OrderID INT)
 BEGIN
-  DELETE FROM Orders WHERE OrderID = @OrderID;
+  DELETE FROM Orders WHERE OrderID = OrderID;
 
--- The @@ROWCOUNT system variable in SQL returns the number of rows
--- affected by the last executed statement in the batch.
--- It can be used to check the success of INSERT, UPDATE, and DELETE statements.
-  IF @@ROWCOUNT > 0 THEN
-    SELECT 'Order ' + CAST(@OrderID AS VARCHAR(10)) + ' is cancelled' AS Confirmation;
+  IF ROW_COUNT() > 0 THEN
+    SELECT CONCAT('Order ', CAST(OrderID AS VARCHAR(10)), ' is cancelled') AS Confirmation;
   ELSE
-    SELECT 'Order ' + CAST(@OrderID AS VARCHAR(10)) + ' does not exist' AS Confirmation;
+    SELECT CONCAT('Order ', CAST(OrderID AS VARCHAR(10)), ' does not exist') AS Confirmation;
   END IF;
-END;
+END //
+DELIMITER ;
