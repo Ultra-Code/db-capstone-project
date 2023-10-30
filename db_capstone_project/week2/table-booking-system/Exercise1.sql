@@ -27,7 +27,7 @@ DELIMITER ;
 
 -- Task 3
 DELIMITER //
-CREATE PROCEDURE AddValidBooking(IN BookingDate DATE, IN TableNumber INT)
+CREATE PROCEDURE ManageBooking(IN BookingDate DATE, IN TableNumber INT)
 BEGIN
   DECLARE BookingStatus VARVARCHAR(10)(100);
 
