@@ -28,5 +28,5 @@ jupyter lab
 -- Yes, can be found at `db_capstone_project/week2/adding-sales-report/LittleLemonDB-Exercise2.sql`
 - Was the ManageBooking() procedure properly implemented?
 -- Yes, can be found at `db_capstone_project/week2/table-booking-system/Exercise1.sql`
--- Was the UpdateBooking(),AddBooking(),CancelBooking() procedure properly implemented?
+- Was the UpdateBooking(),AddBooking(),CancelBooking() procedure properly implemented?
 -- Yes, can be found at `db_capstone_project/week2/table-booking-system/Exercise2.sql`
