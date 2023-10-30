@@ -20,12 +20,9 @@ BEGIN
 -- The @@ROWCOUNT system variable in SQL returns the number of rows
 -- affected by the last executed statement in the batch.
 -- It can be used to check the success of INSERT, UPDATE, and DELETE statements.
-  IF @@ROWCOUNT > 0
-  BEGIN
+  IF @@ROWCOUNT > 0 THEN
     SELECT 'Order ' + CAST(@OrderID AS VARCHAR(10)) + ' is cancelled' AS Confirmation;
-  END
   ELSE
-  BEGIN
     SELECT 'Order ' + CAST(@OrderID AS VARCHAR(10)) + ' does not exist' AS Confirmation;
-  END
+  END IF;
 END;
